@@ -10,3 +10,9 @@ class Article(models.Model):
     # add in author later
     def __str__(self):
         return self.title
+
+    def snippet(self): #displays up to first 150 characters of the article
+        if len(self.body) > 150:
+            return self.body[:150] + '...'
+        else:
+            return self.body[:150]
